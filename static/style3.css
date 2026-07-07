@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+
+h3 { font-family: Arial, sans-serif; }
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('tech.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.container {
+    width: 600px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid white;
+    background: transparent;
+    backdrop-filter: blur(10px);
+}
+
+.spam {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+
+.message {
+    height: 200px;
+    font-size: 16px;
+}
+
+.message textarea {
+    width: 500px;
+    height: 100%;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    padding: 0px 8px 0px 5px;
+}
+
+textarea::placeholder {
+    padding: 10px;
+    font-size: 14px;
+    color: black;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: "Roboto Slab", serif;
+    font-weight: bold;
+
+}
+
+.result-box {
+    text-align: center;
+    color: white;
+}

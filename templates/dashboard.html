@@ -1,0 +1,35 @@
+<!doctype html> 
+<html lang="en"> 
+  <head> 
+    <title>Login page</title> 
+    <meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style3.css') }}" />
+  </head> 
+  <body> 
+    <!--<h2>user dashboard</h2> 
+    <p><b>Name: </b> {{user.name }}</p> 
+    <p><b>Email: </b> {{user.email }}</p> -->
+
+    <section>
+    <div class="container">
+    <form method="POST">
+         <div class="spam">
+            <h1>Spam Detector</h1>
+        </div>
+        <br>
+        <div class="message">
+            <textarea name="message" placeholder="Paste the message here..." required></textarea>
+        </div>
+        <br>
+        <button type="submit">Analyze</button>
+        <div class="result-box">
+        <h3>Result: {{ prediction }}</h3>
+    </div>
+    </form>
+    </div>
+    </section>
+
+    <a href="/logout" class="btn btn-dark">Logout</a> 
+  </body> 
+</html>
