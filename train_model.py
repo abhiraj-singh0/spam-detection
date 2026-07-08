@@ -34,6 +34,7 @@ pickle.dump(model, open('spam_model.pkl', 'wb'))
 
 with open('spam_model.pkl', 'wb') as model_file:
     pickle.dump(model , model_file)
+    
 
 with open('vectorizer.pkl', 'wb') as vocab_file:
     pickle.dump(cv, vocab_file)

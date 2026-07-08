@@ -1,47 +1,110 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Auth system</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style2.css') }}"
     />
-    <script src="script.js"></script>
   </head>
   <body>
     <header>
-        <div class="spam-title">
-            <h1>Spam Detection</h1>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">How it works</a></li>
-                <li><a href="">Features</a></li>
-            </ul>
-        </nav>
+      <div class="spam-title">
+        <h3>SpamDetection</h3>
+      </div>
+      <nav class="navbar">
+        <a href="">Home</a>
+        <a href="">Featues</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+      </nav>
+
+      <div>
         <a href="" class="loginBtn">Login</a>
+        <a href="" class="loginBtn">Get Started</a>
+      </div>
     </header>
 
     <section class="home">
-        <div class="left-home">
-            <h1>Detect Spam Before It Reaches You</h1>
-            <p>An advanced machine-learning tool that filters out phising,<br>
-               promotional junk, and malicious links in real time
+      <div class="left-home">
+        <h1>Detect Spam Messages<br>Instantly Using AI</h1>
+        <p>Keep uour communication secure, Outsmart phishing attempts,<br>
+           malicious links, and unwanted noise with automated,<br>
+          high-precision text filtering.</p>
+        <div class="double-button">
+          <a href="#" class="tryNow">Try Now</a>
+          <a href="#" class="learnMore">Learn More</a>
+        </div>
+      </div>
+      <div class="right-home">
+        <img src="/static/aiback.png" alt="AI Logo">
+      </div>
+    </section>
+
+    <section class="features">
+      <h3 style="padding: 80px 0 20px 0; font-size: 30px; width: 340px; text-align: center;">Features</h3>
+      <div class="feature-box">
+        <div class="box1">
+          <div class="icons">
+            <i class="fa-regular fa-envelope"></i></div>
+          <h4 style="width: 190px; padding-bottom: 10px;">Email Detection</h4>
+          <p>Paste the content of any<br>
+            suspicious email directly into<br> 
+            our website to instantly<br>
+            verify if it is a dangerous<br>
+            phishing attempt.
+          </p>
+        </div>
+        <div class="box1">
+          <div class="icons">
+            <i class="fa-regular fa-message"></i>
+          </div>
+          <h4 style="width: 198px; padding-bottom: 10px;">SMS Detection</h4>
+          <p>Verify your text messages.<br>
+            Receive any sketchy text<br>
+            message copy and paste <br>
+            the SMS to find out if<br>
+            it's a scam before you click.
+          </p>
+        </div>
+        <div class="box1">
+          <div class="icons">
+            <i class="fa-regular fa-clock"></i></div>
+          <h4 style="width: 187px; padding-bottom: 10px;">Real-Time Analysis</h4>
+          <p>Instant threat detection.<br>
+            Our system analyzes user <br>
+            input and identifies fradulent<br>
+            scam and spam in <br>
+            milliseconds.
+          </p>
+        </div>
+        <div class="box1">
+          <div class="icons">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h4 style="width: 185px; padding-bottom: 10px;">AI Accuracy</h4>
+          <p>Powered by AI, our machine<br> 
+            learning model accurately<br>
+            identifies the nhidden<br>
+            patterns and keywords of<br>
+            modern spam.
             </p>
         </div>
-        <div class="right-home">
-            <img src="" alt="image1">
-        </div>
-    </section>
+      </div>
+    </section> 
+
+    <!-- <section class="demo">
+      <div class="tryOnce">
+      <h1>Demo: Test Our System</h1>
+      <p>Curious about a suspicious email or text? Paste it below to see our AI detection model in action.<br>
+      Get immediate confirmation if it looks like a threat.</p>
+      <textarea name="spam_text" maxlength="500" placeholder="Paste up to 500 characters here">
+      </textarea>
+      <button type="submit">Analyze Now</button>
+      </div>
+    </section> -->
   </body>
 </html>

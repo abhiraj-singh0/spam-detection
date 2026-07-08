@@ -3,51 +3,52 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    background-color: #0b0f19; /* Deep, dark navy base */
-    
-    /* Keeping the Blue, adding a Classy Teal */
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.35), transparent 60%), /* The Deep Blue */
-        radial-gradient(circle at 80% 40%, rgba(20, 184, 166, 0.25), transparent 60%); /* Classy Teal/Cyan */
-    
-    color: #e2e8f0; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-family: 'Poppins', 'sans-serif';
 }
 
 
 
+.home {
+    height: 600px;
 
- /* 1. The Main Background Color */
+    background:
+        radial-gradient(circle at 0% 0%, #c9e1ff 0%, transparent 35%),
+        radial-gradient(circle at 100% 0%, #d7ebff 0%, transparent 35%),
+        radial-gradient(circle at 0% 100%, #d7ebff 0%, transparent 35%),
+        radial-gradient(circle at 100% 100%, #c9e1ff 0%, transparent 35%),
+        radial-gradient(circle at center, #ffffff 35%, #f8fbff 65%, #edf5ff 100%);
+
+
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;     
+}
+
+
+
+
 header {
-    background-color: #0b1221;
-    color: #ffffff;
-    height: 70px;
+    color: #121212;
+    height: 60px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-    background: rgba(255, 255, 255, 0.05); /* Very transparent white */
-    backdrop-filter: blur(10px); /* Blurs the glowing background behind it */
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-    
-    /* background: radial-gradient(circle, rgba(29, 219, 219, 0.15) 0%, rgba(11, 18, 33, 0) 65%); */
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 20;
 }
 
 
-.spam-title h1 {
+
+.spam-title h3 {
     font-family: 'Poppins', 'sans-serif';
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 
 }
 
-.navbar ul{
+.navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -57,19 +58,14 @@ header {
 
 }
 
-.navbar ul li a {
+.navbar a {
     text-decoration: none;
     font-family: 'Poppins', 'sans-serif';
-    color: #00e5ff;
-}
 
-.navbar li {
-    list-style: none;
 }
 
 .loginBtn {
     text-decoration: none;
-    color: #00e5ff;
     font-family: 'Poppins', 'sans-serif';
     height: 30px;
     width: 70px;
@@ -85,19 +81,108 @@ header {
 
 
 /* Home Section */
-.home {
-    height: 600px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 .left-home h1{
     font-family: 'Poppins', 'sans-serif';
-    font-size: 40px;
+    font-size: 50px;
+}
+
+.left-home p {
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 15px;
 }
 
 .right-home img{
     height: 400px;
-    width: 400px;
+    width: 300px;
 }
+
+.double-button {
+    padding-top: 20px;
+    height: 40px;
+    display: flex;
+}
+
+.double-button a {
+    text-decoration: none;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 14px;
+}
+
+.tryNow {
+    width: 80px;
+    background: #3273f6;
+    color: #ffffff;
+}
+
+.learnMore {
+    width: 90px;
+    margin-left: 13px;
+    text-align: center;
+    border: 1px solid #121212;
+}
+
+.features {
+    height: 480px;
+}
+
+.feature-box {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 {
+    height: 250px;
+    width: 226px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 10px;
+    padding-left: 24px;
+}
+
+.box1 p {
+    font-size: 14px;
+}
+
+.icons {
+    width: 40px;
+    height: 40px;
+    background-color: #eff6ff;
+    color: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* .demo {
+    height: 500px; */
+    /* background:
+        radial-gradient(circle at 0% 0%, #c9e1ff 0%, transparent 35%),
+        radial-gradient(circle at 100% 0%, #d7ebff 0%, transparent 35%),
+        radial-gradient(circle at 0% 100%, #d7ebff 0%, transparent 35%),
+        radial-gradient(circle at 100% 100%, #c9e1ff 0%, transparent 35%),
+        radial-gradient(circle at center, #ffffff 35%, #f8fbff 65%, #edf5ff 100%); */
+/*     
+    background-color: #e0f2fe;
+} */
+
+/* .tryOnce {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 80px;
+} */
