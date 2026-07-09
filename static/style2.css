@@ -223,7 +223,7 @@ header {
 }
 
 .inner_unlimited {
-    height: 300px;
+    height: 270px;
     width: 650px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -240,4 +240,19 @@ header {
 .single-login i {
     font-size: 30px;
     padding: 10px 0 0 10px;
+}
+
+.inner_unlimited a {
+    align-self: center;
+    width: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 10px;
 }
