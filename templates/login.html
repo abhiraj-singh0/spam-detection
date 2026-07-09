@@ -3,32 +3,37 @@
   <head> 
     <title>Login page</title> 
     <meta charset="utf-8" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
   </head> 
   <body class="body">
     <section>
+      <div class="left-container">
+        <img src="/static/blueshield.png">
+      </div>
     <div class="container">
       <form action="/login" id="myForm" method="POST">
         <div class="loginform">
-          <h2>Login Form</h2>
+          <h3>Sign In to your account</h3>
+          <p>Enter your details to access the system.</p>
         </div>
         <div class="input-box">
-          <input type="email" name="email" required/>
-          <label>Email</label>
+          <i class="fa-regular fa-user"></i>
+          <input type="email" name="email" required placeholder="Username / Email"/>
         </div>
         <br/>
         <div class="input-box">
-          <input type="password" name="password" required/>
-          <label>Password</label>
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" name="password" required placeholder="Password"/>
         </div>
         <br />
         <div class="remember">
           <label><input type="checkbox" id="rememberMe" name="rememberMe">Remember me</label>
-          <a href="#" id="forgotPassword">Forgot Password</a>
+          <a href="#" id="forgotPassword">Forget Password</a>
         </div>
         <br />
-        <button type="submit">Submit</button>
+        <button type="submit">Sign in</button>
         <div class="register">
           <p>Don't have an account?
             <a href="/register">Register</a>
