@@ -166,23 +166,78 @@ header {
     margin-bottom: 20px;
 }
 
-/* .demo {
-    height: 500px; */
+.demo {
+    height: 500px;
     /* background:
         radial-gradient(circle at 0% 0%, #c9e1ff 0%, transparent 35%),
         radial-gradient(circle at 100% 0%, #d7ebff 0%, transparent 35%),
         radial-gradient(circle at 0% 100%, #d7ebff 0%, transparent 35%),
         radial-gradient(circle at 100% 100%, #c9e1ff 0%, transparent 35%),
         radial-gradient(circle at center, #ffffff 35%, #f8fbff 65%, #edf5ff 100%); */
-/*     
+    
     background-color: #e0f2fe;
-} */
+    display: flex;
+}
 
-/* .tryOnce {
+.tryOnce {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
     padding-left: 80px;
-} */
+}
+
+.tryOnce textarea{
+    width: 800px;
+    height: 150px;
+    border-radius: 10px;
+    color: #121212;
+    padding: 5px 0 0 10px;
+}
+
+.button-analyze {
+    height: 455px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 0 0 20px;
+}
+
+
+.button-analyze button {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    background: #2563eb;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.outer_unlimited {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner_unlimited {
+    height: 300px;
+    width: 650px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.single-login {
+    display: flex;
+    gap: 15px;
+}
+
+.single-login i {
+    font-size: 30px;
+    padding: 10px 0 0 10px;
+}
