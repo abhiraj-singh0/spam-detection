@@ -31,6 +31,7 @@ except FileNotFoundError:
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(150), unique=True, nullable=False)
+    email = db.Column(db.String(150), unique=True, nullable=False)
     password = db.Column(db.String(150), nullable=False)
 
 @login_manager.user_loader
@@ -47,6 +48,7 @@ def index() :
 def register():
     if request.method == 'POST':
         username = request.form.get('username')
+        email = request.form.get('email')
         password = request.form.get('password')
         
         # Check if user already exists
@@ -56,7 +58,7 @@ def register():
             
         # Hash password and save user
         hashed_pw = generate_password_hash(password)
-        new_user = User(username=username, password=hashed_pw)
+        new_user = User(username=username, email=email, password=hashed_pw)
         db.session.add(new_user)
         db.session.commit()
         
@@ -68,14 +70,14 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form.get('username')
+        email = request.form.get('email')
         password = request.form.get('password')
         
-        user = User.query.filter_by(username=username).first()
+        user = User.query.filter_by(email=email).first()
         # Verify user exists and password is correct
         if user and check_password_hash(user.password, password):
             login_user(user)
-            return redirect(url_for('home'))
+            return redirect(url_for('dashboard'))
         else:
             flash('Invalid username or password.')
             
@@ -103,9 +105,9 @@ def dashboard():
             # Transform text and predict
             vect = cv.transform([message]).toarray()
             my_prediction = model.predict(vect)
-            prediction = 'SPAM' if my_prediction[0] == 1 else 'NOT SPAM'
+            prediction = 'SPAM' if my_prediction[0] == 'spam' else 'NOT SPAM'
             
-    return render_template('index.html', prediction=prediction, message=request.form.get('message', ''))
+    return render_template('dashboard.html', prediction=prediction, message=request.form.get('message', ''))
 
 # Initialize database tables before running
 if __name__ == '__main__':
