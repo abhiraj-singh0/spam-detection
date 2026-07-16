@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Analysis Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Importing a professional Sans-Serif font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <!-- Hamburger Icon (Place inside your <nav>) -->
+<div class="menu-icon">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+</div>
+
+<!-- Sidebar Menu (Place outside/below your <nav>) -->
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-links">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Analysis History</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Log Out</a></li>
+    </ul>
+</aside>
+
+        <h1 class="nav-title">Spam Analysis Engine</h1>
+    </nav>
+
+    <!-- Main Workspace -->
+    <main class="container">
+        <div class="analysis-card">
+            <label for="message-input" class="input-label">Enter message payload for analysis:</label>
+            <textarea id="message-input" placeholder="Type or paste the text content here..."></textarea>
+            
+            <button class="analyze-btn">Execute Analysis</button>
+            
+            <div class="results-section">
+                <span class="result-label">System Status:</span>
+                <!-- Default state badge -->
+                <span class="badge badge-neutral">AWAITING INPUT</span>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+<style>
+/* Base Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f3f4f6; /* Clinical light gray background */
+    color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: #ffffff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.menu-icon {
+    cursor: pointer;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.menu-icon:hover {
+    background-color: #f3f4f6;
+}
+
+.nav-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-left: 16px;
+    color: #111827;
+    letter-spacing: -0.01em;
+}
+
+/* Main Container Alignment */
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Central Analysis Card */
+.analysis-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 650px; /* Slightly wider for comfortable reading */
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+/* Text Area Styling */
+textarea {
+    width: 100%;
+    height: 220px;
+    padding: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    resize: vertical;
+    background-color: #f9fafb;
+    color: #1f2937;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    line-height: 1.5;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); /* Subtle blue glow on focus */
+    background-color: #ffffff;
+}
+
+/* Primary Action Button */
+.analyze-btn {
+    width: 100%;
+    margin-top: 24px;
+    padding: 14px;
+    background-color: #1f2937; /* Deep slate, feels more serious than bright blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.analyze-btn:hover {
+    background-color: #111827;
+}
+
+/* Results Display Area */
+.results-section {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+/* Status Badges */
+.badge {
+    padding: 6px 12px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.badge-neutral {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid #d1d5db;
+}
+
+/* Add these to your CSS for when you connect your backend logic */
+.badge-danger {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #f87171;
+}
+
+.badge-success {
+    background-color: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #86efac;
+}
+
+/* Hamburger Icon Styling */
+.menu-icon {
+    cursor: pointer;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.menu-icon:hover {
+    background-color: #f3f4f6;
+}
+
+/* Sidebar Styling (Hidden by default using translateX) */
+.sidebar {
+    position: fixed;
+    top: 60px; /* Adjust this to match your navbar height */
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 60px); /* Full height minus navbar */
+    background-color: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    box-shadow: 4px 0 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    
+    /* Pushes sidebar off-screen to the left */
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* The class added by JS to slide the menu into view */
+.sidebar.open {
+    transform: translateX(0);
+}
+
+/* Sidebar Links Styling */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-links li a {
+    display: block;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-links li a:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 2. Spam Detection Simulation Logic ---
+    const analyzeBtn = document.querySelector('.analyze-btn');
+    const messageInput = document.getElementById('message-input');
+    const badge = document.querySelector('.badge');
+
+    analyzeBtn.addEventListener('click', () => {
+        // Get the text from the input and convert to lowercase for easy checking
+        const message = messageInput.value.trim().toLowerCase();
+
+        // Remove all existing badge color classes to reset the state
+        badge.classList.remove('badge-neutral', 'badge-danger', 'badge-success');
+
+        // Check if the input is empty
+        if (message === "") {
+            badge.textContent = "AWAITING INPUT";
+            badge.classList.add('badge-neutral');
+            return; // Stop execution here if empty
+        }
+
+        // Change the button text temporarily to simulate processing time
+        const originalBtnText = analyzeBtn.textContent;
+        analyzeBtn.textContent = "Analyzing...";
+        analyzeBtn.disabled = true;
+
+        // Simulate a slight delay (e.g., waiting for your backend Python script)
+        setTimeout(() => {
+            // Mock logic: Check for common spam trigger words
+            const spamKeywords = ['free', 'win', 'money', 'urgent', 'click here', 'prize', 'lottery'];
+            const isSpam = spamKeywords.some(keyword => message.includes(keyword));
+
+            if (isSpam) {
+                // Apply Red Danger Badge
+                badge.textContent = "ALERT: SPAM DETECTED";
+                badge.classList.add('badge-danger');
+            } else {
+                // Apply Green Success Badge
+                badge.textContent = "STATUS: CLEAN";
+                badge.classList.add('badge-success');
+            }
+
+            // Restore the button state
+            analyzeBtn.textContent = originalBtnText;
+            analyzeBtn.disabled = false;
+            
+        }, 800); // 800 millisecond delay to make it feel like a real analysis
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the hamburger icon and the sidebar elements
+    const menuIcon = document.querySelector('.menu-icon');
+    const sidebar = document.getElementById('sidebar');
+    
+    // Toggle the 'open' class when the hamburger is clicked
+    menuIcon.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+});
+
+
+</script>
+
+</body>
+</html>
